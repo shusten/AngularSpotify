@@ -3,6 +3,7 @@ import { SpotifyConfiguration } from '../../environments/environment.development
 import Spotify from 'spotify-web-api-js';
 import { IUser } from '../interfaces/IUser';
 import { Router } from '@angular/router';
+import { setUserProfileData } from '../Common/spotifyHelper';
 
 @Injectable({
   providedIn: 'root'
@@ -29,7 +30,7 @@ export class SpotifyService {
 
       this.defineAccessToken(token);
       await this.getSpotifyUser();
-      return true;
+      return !!this.user;
 
     }catch(ex) {
 
@@ -40,7 +41,7 @@ export class SpotifyService {
 
   async getSpotifyUser() {
     const userInfo = await this.spotifyApi.getMe();
-    console.log(userInfo);
+    this.user = setUserProfileData(userInfo);
   }
 
   getLoginUrl(){

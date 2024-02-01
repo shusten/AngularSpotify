@@ -4,7 +4,7 @@ import { authenticatedGuard } from './guards/authenticated.guard';
 export const AppRoutes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'player',
     pathMatch: 'full'
   },
   {
