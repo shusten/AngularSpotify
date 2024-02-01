@@ -1,17 +1,22 @@
 import { inject } from '@angular/core';
 import { CanMatchFn, Router } from '@angular/router';
+import { SpotifyService } from '../services/spotify.service';
 
 export const authenticatedGuard: CanMatchFn = (route, segments) => {
 
   const token = localStorage.getItem('token');
-  const router = inject(Router);
+  const spotifyService = inject(SpotifyService);
 
   if(!token){
-    localStorage.clear();
-    router.navigate(['/login']);
-    return false;
+    return spotifyService.unauthenticated()
   }
-  else
-    return true;
+
+  return new Promise((res) => {
+    const createdUser = spotifyService.initializeUser();
+    if (createdUser)
+      res(true);
+    else
+      res(spotifyService.unauthenticated())
+  })
 
 };
