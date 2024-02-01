@@ -11,8 +11,8 @@ export const authenticatedGuard: CanMatchFn = (route, segments) => {
     return spotifyService.unauthenticated()
   }
 
-  return new Promise((res) => {
-    const createdUser = spotifyService.initializeUser();
+  return new Promise(async (res) => {
+    const createdUser = await spotifyService.initializeUser();
     if (createdUser)
       res(true);
     else
