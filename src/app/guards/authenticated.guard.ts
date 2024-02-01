@@ -7,6 +7,7 @@ export const authenticatedGuard: CanMatchFn = (route, segments) => {
   const router = inject(Router);
 
   if(!token){
+    localStorage.clear();
     router.navigate(['/login']);
     return false;
   }
