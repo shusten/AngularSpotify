@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, input } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-menu-button',
@@ -8,6 +8,9 @@ import { Component, Input, OnInit, input } from '@angular/core';
 export class MenuButtonComponent implements OnInit{
 
   @Input() description = '';
+  @Input() selected = false;
+
+  @Output() click = new EventEmitter<void>()
 
   constructor(
 
@@ -15,5 +18,9 @@ export class MenuButtonComponent implements OnInit{
 
   ngOnInit(): void {
 
+  }
+
+  onClick() {
+    this.click.emit();
   }
 }

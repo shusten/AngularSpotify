@@ -8,9 +8,15 @@ import { faGuitar, faHome, faMusic, faSearch } from '@fortawesome/free-solid-svg
 })
 export class LeftPanelComponent {
 
+  selectedMenuButton = '';
+
   homeIcon      =  faHome;
   searchIcon    =  faSearch;
   artistIcon    =  faGuitar;
   playlistIcon  =  faMusic;
+
+  buttonClicked(button: string) {
+    this.selectedMenuButton = button;
+  }
 
 }
