@@ -4,6 +4,7 @@ import { PlayerComponent } from './player.component';
 import { RouterModule } from '@angular/router';
 import { PlayerRoutes } from './player.routes';
 import { LeftPanelComponent } from '../../components/left-panel/left-panel.component';
+import { MenuButtonComponent } from '../../components/menu-button/menu-button.component';
 
 @NgModule({
   imports: [
@@ -12,7 +13,8 @@ import { LeftPanelComponent } from '../../components/left-panel/left-panel.compo
   ],
   declarations: [
     PlayerComponent,
-    LeftPanelComponent
+    LeftPanelComponent,
+    MenuButtonComponent,
   ]
 })
 export class PlayerModule { }
