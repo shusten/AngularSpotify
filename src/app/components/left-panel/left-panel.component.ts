@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { faGuitar, faHome, faMusic, faSearch } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-left-panel',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrl: './left-panel.component.scss'
 })
 export class LeftPanelComponent {
+
+  homeIcon      =  faHome;
+  searchIcon    =  faSearch;
+  artistIcon    =  faGuitar;
+  playlistIcon  =  faMusic;
 
 }
