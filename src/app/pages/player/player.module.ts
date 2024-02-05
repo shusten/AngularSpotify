@@ -7,6 +7,7 @@ import { LeftPanelComponent } from '../../components/left-panel/left-panel.compo
 import { MenuButtonComponent } from '../../components/menu-button/menu-button.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { UserFooterComponent } from '../../components/user-footer/user-footer.component';
+import { HomeComponent } from '../home/home.component';
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import { UserFooterComponent } from '../../components/user-footer/user-footer.co
     PlayerComponent,
     LeftPanelComponent,
     MenuButtonComponent,
-    UserFooterComponent
+    UserFooterComponent,
+    HomeComponent,
   ]
 })
 export class PlayerModule { }
