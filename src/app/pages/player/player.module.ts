@@ -6,6 +6,7 @@ import { PlayerRoutes } from './player.routes';
 import { LeftPanelComponent } from '../../components/left-panel/left-panel.component';
 import { MenuButtonComponent } from '../../components/menu-button/menu-button.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { UserFooterComponent } from '../../components/user-footer/user-footer.component';
 
 @NgModule({
   imports: [
@@ -17,6 +18,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     PlayerComponent,
     LeftPanelComponent,
     MenuButtonComponent,
+    UserFooterComponent
   ]
 })
 export class PlayerModule { }
