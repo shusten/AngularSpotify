@@ -31,9 +31,14 @@ $m-between-menus: 10px;
   .menu-container {
     width: 100%;
 
+    &.flex {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
     &.options {
       min-height: $h-menu-options;
-      flex-direction: column;
 
       * {
         margin-bottom: $m-between-menus;
@@ -46,6 +51,14 @@ $m-between-menus: 10px;
       font-weight: 700;
       font-size: .7rem;
       color: $dark1;
+    }
+
+    .playlist-scroll {
+      width: 100%;
+
+      *{
+        margin-bottom: $m-between-menus;
+      }
     }
 
   }

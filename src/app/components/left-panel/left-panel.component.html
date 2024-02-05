@@ -31,6 +31,18 @@
     <span class="playlist-title">
       PLAYLISTS
     </span>
+
+    <div class="playlist-scroll">
+      <app-menu-button
+      [description]="'Play rock'"
+      [selected]="selectedMenuButton === 'Play rock'"
+      (click)="buttonClicked('Play rock')"
+      >
+        <fa-icon
+        [icon]="playlistIcon"
+        ></fa-icon>
+      </app-menu-button>
+    </div>
   </div>
 
 </div>

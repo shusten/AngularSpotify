@@ -3,7 +3,8 @@ import { SpotifyConfiguration } from '../../environments/environment.development
 import Spotify from 'spotify-web-api-js';
 import { IUser } from '../interfaces/IUser';
 import { Router } from '@angular/router';
-import { setUserProfileData } from '../Common/spotifyHelper';
+import { setSpotifyPlaylistData, setUserProfileData } from '../Common/spotifyHelper';
+import { IPlaylist } from '../interfaces/IPlaylist';
 
 @Injectable({
   providedIn: 'root'
@@ -73,4 +74,13 @@ export class SpotifyService {
     this.router.navigate(['/login']);
     return false;
   }
+
+  async getUserPlaylist(offset = 0, limit = 50): Promise<IPlaylist[]> {
+    const playlists = await this.spotifyApi.getUserPlaylists(this.user.id, { offset, limit});
+    console.log(playlists);
+
+    return playlists.items.map(setSpotifyPlaylistData);
+  }
+
+
 }
