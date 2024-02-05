@@ -5,7 +5,7 @@ export function setUserProfileData(user: SpotifyApi.CurrentUsersProfileResponse)
 
   return {
     id: user.id,
-    name: user.birthdate,
+    name: user.display_name,
     imageUrl: user.images.pop().url
   }
 }
