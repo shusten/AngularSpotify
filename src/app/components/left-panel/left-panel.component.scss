@@ -55,6 +55,12 @@ $m-between-menus: 10px;
 
     .playlist-scroll {
       width: 100%;
+      max-height: 50vh;
+      overflow-y: auto;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
 
       *{
         margin-bottom: $m-between-menus;
