@@ -20,7 +20,7 @@ export class UserFooterComponent {
   }
 
   logout() {
-
+    this.spotifyService.logout();
   }
 
 }

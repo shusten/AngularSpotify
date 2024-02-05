@@ -82,5 +82,9 @@ export class SpotifyService {
     return playlists.items.map(setSpotifyPlaylistData);
   }
 
+  logout() {
+    localStorage.clear();
+    this.router.navigate(['/login']);
+  }
 
 }

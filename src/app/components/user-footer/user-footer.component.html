@@ -3,5 +3,5 @@
   <span>
     {{ user.name }}
   </span>
-  <fa-icon class="icon" [icon]="logOutIcon"></fa-icon>
+  <fa-icon (click)="logout()" class="icon" [icon]="logOutIcon"></fa-icon>
 </div>
