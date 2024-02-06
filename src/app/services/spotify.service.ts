@@ -5,6 +5,7 @@ import { IUser } from '../interfaces/IUser';
 import { Router } from '@angular/router';
 import { setSpotifyPlaylistData, setUserProfileData } from '../Common/spotifyHelper';
 import { IPlaylist } from '../interfaces/IPlaylist';
+import { IArtist } from '../interfaces/IArtist';
 
 @Injectable({
   providedIn: 'root'
@@ -82,8 +83,8 @@ export class SpotifyService {
     return playlists.items.map(setSpotifyPlaylistData);
   }
 
-  async getTopArtists(limit = 10) {
-
+  async getTopArtists(limit = 10): Promise<IArtist[]> {
+    return []
   }
 
   logout() {
