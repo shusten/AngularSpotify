@@ -8,6 +8,7 @@ import { MenuButtonComponent } from '../../components/menu-button/menu-button.co
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { UserFooterComponent } from '../../components/user-footer/user-footer.component';
 import { HomeComponent } from '../home/home.component';
+import { TopArtistsComponent } from '../../components/top-artists/top-artists.component';
 
 @NgModule({
   imports: [
@@ -21,6 +22,7 @@ import { HomeComponent } from '../home/home.component';
     MenuButtonComponent,
     UserFooterComponent,
     HomeComponent,
+    TopArtistsComponent,
   ]
 })
 export class PlayerModule { }
