@@ -82,6 +82,10 @@ export class SpotifyService {
     return playlists.items.map(setSpotifyPlaylistData);
   }
 
+  async getTopArtists(limit = 10) {
+
+  }
+
   logout() {
     localStorage.clear();
     this.router.navigate(['/login']);

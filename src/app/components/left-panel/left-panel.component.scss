@@ -14,7 +14,8 @@ $h-summed-menu: calc($h-spotify-logo + $h-menu-options + $h-user-footer);
   display: flex;
   flex-direction: column;
   background: $background-color2;
-  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.044);
+  box-shadow: 1px 1px 15px $dark3;
+
 
   .menus {
     flex-grow: 1;

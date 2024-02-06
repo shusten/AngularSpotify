@@ -45,3 +45,17 @@ html, body {
     }
   }
 }
+
+.p-20 {
+  padding: 20px;
+}
+
+.d-block {
+  display: block;
+}
+
+.card {
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.044);
+  background-color: $white;
+  border-radius: 10px;
+}
