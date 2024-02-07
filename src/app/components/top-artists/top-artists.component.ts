@@ -12,9 +12,17 @@ export class TopArtistsComponent implements OnInit {
 
   constructor(private spotifyService: SpotifyService) { }
 
-  artist: IArtist = newArtist();
+  topArtist: IArtist = newArtist();
 
   ngOnInit(): void {
+    this.getArtist();
+  }
 
+  async getArtist() {
+    const artists = await this.spotifyService.getTopArtists(1);
+
+    if(!!artists) {
+      this.topArtist = artists.pop();
+    }
   }
 }

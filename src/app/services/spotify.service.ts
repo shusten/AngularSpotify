@@ -3,7 +3,7 @@ import { SpotifyConfiguration } from '../../environments/environment.development
 import Spotify from 'spotify-web-api-js';
 import { IUser } from '../interfaces/IUser';
 import { Router } from '@angular/router';
-import { setSpotifyPlaylistData, setUserProfileData } from '../Common/spotifyHelper';
+import { setSpotifyArtistData, setSpotifyPlaylistData, setUserProfileData } from '../Common/spotifyHelper';
 import { IPlaylist } from '../interfaces/IPlaylist';
 import { IArtist } from '../interfaces/IArtist';
 
@@ -78,13 +78,12 @@ export class SpotifyService {
 
   async getUserPlaylist(offset = 0, limit = 50): Promise<IPlaylist[]> {
     const playlists = await this.spotifyApi.getUserPlaylists(this.user.id, { offset, limit});
-    console.log(playlists);
-
     return playlists.items.map(setSpotifyPlaylistData);
   }
 
   async getTopArtists(limit = 10): Promise<IArtist[]> {
-    return []
+    const artists = await this.spotifyApi.getMyTopArtists({ limit });
+    return artists.items.map(setSpotifyArtistData);
   }
 
   logout() {
