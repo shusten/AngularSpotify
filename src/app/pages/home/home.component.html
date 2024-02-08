@@ -29,6 +29,17 @@
         </th>
       </tr>
     </thead>
+    <tbody>
+      <tr *ngFor="let music of musics">
+        <td>
+          <fa-icon [icon]="playIcon"></fa-icon>
+        </td>
+        <td>{{ music.title }}</td>
+        <td>{{ getArtists(music) }}</td>
+        <td>{{ music.time }}</td>
+        <td>{{ music.album.name }}</td>
+      </tr>
+    </tbody>
   </table>
 
 </div>
