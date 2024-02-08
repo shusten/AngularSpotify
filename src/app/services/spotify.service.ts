@@ -3,9 +3,10 @@ import { SpotifyConfiguration } from '../../environments/environment.development
 import Spotify from 'spotify-web-api-js';
 import { IUser } from '../interfaces/IUser';
 import { Router } from '@angular/router';
-import { setSpotifyArtistData, setSpotifyPlaylistData, setUserProfileData } from '../Common/spotifyHelper';
+import { setSpotfyTrackMusicData, setSpotifyArtistData, setSpotifyPlaylistData, setUserProfileData } from '../Common/spotifyHelper';
 import { IPlaylist } from '../interfaces/IPlaylist';
 import { IArtist } from '../interfaces/IArtist';
+import { IMusic } from '../interfaces/IMusics';
 
 @Injectable({
   providedIn: 'root'
@@ -84,6 +85,11 @@ export class SpotifyService {
   async getTopArtists(limit = 10): Promise<IArtist[]> {
     const artists = await this.spotifyApi.getMyTopArtists({ limit });
     return artists.items.map(setSpotifyArtistData);
+  }
+
+  async getMusics(offset = 0, limit = 50): Promise<IMusic[]> {
+    const musics = await this.spotifyApi.getMySavedTracks({ offset, limit });
+    return musics.items.map(data => setSpotfyTrackMusicData(data.track));
   }
 
   logout() {
