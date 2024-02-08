@@ -1,3 +1,4 @@
+import { addMilliseconds, format } from "date-fns";
 import { IArtist } from "../interfaces/IArtist";
 import { IMusic } from "../interfaces/IMusics";
 import { IPlaylist } from "../interfaces/IPlaylist";
@@ -29,6 +30,12 @@ export function setSpotifyArtistData(spotifyArtist: SpotifyApi.ArtistObjectFull)
 }
 
 export function setSpotfyTrackMusicData(spotifyTrack: SpotifyApi.TrackObjectFull): IMusic {
+
+  const msToMinutes = (ms: number) =>  {
+    const data = addMilliseconds(new Date(0), ms);
+    return format(data, 'mm:ss');
+  }
+
   return {
     id: spotifyTrack.id,
     title: spotifyTrack.name,
@@ -41,6 +48,6 @@ export function setSpotfyTrackMusicData(spotifyTrack: SpotifyApi.TrackObjectFull
       id: artist.id,
       name: artist.name
     })),
-    time: ''
+    time: msToMinutes(spotifyTrack.duration_ms)
   }
 }
