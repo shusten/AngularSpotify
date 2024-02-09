@@ -37,7 +37,7 @@ export function setSpotfyTrackMusicData(spotifyTrack: SpotifyApi.TrackObjectFull
   }
 
   return {
-    id: spotifyTrack.id,
+    id: spotifyTrack.uri,
     title: spotifyTrack.name,
     album: {
       id: spotifyTrack.id,
